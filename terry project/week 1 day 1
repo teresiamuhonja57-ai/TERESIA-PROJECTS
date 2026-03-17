@@ -1,0 +1,64 @@
+#exercise1:
+print(("Hello world\n"*4))
+
+#exercise2:
+print((99**3) * 8)
+
+#exercise3:
+
+5 < 3
+3 == 3
+"3 == ""3"
+"3" > 3
+#exercise 4
+computer_brand = "lenovo"
+print (f"I have a {computer_brand} computer.")
+ #exercise5:
+name = "Teresia"
+age = 25
+shoe_size = 40
+info = f"My name is {name}, I am {age}  shoe size  {shoe_size}"
+
+print(info)
+
+#exercise6:
+a = 10
+b = 5
+
+if a > b:
+    print("Hello World")
+     
+#exercise7
+
+# Ask the user for a number
+number = int(input("Enter a number: "))
+
+# Check if the number is even or odd
+if number % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
+
+#exercise8
+# Setting my name
+my_name = "Teresia"
+
+# Asking the user for their name
+user_name = input("What is your name? ")
+
+# Comparing the names (using .lower() to ignore capitalization)
+if user_name.strip().lower() == my_name.lower():
+    print(f"Wait... your name is {user_name} too? There can only be one. Choose your weapon!")
+else:
+    print(f"Phew! {user_name} is a nice name, but it's no {my_name}. We can still be friends.")
+
+#exercise9
+
+# Ask the user for their height in centimeters
+height = int(input("Enter your height in cm: "))
+
+# Check if the user is tall enough
+if height > 145:
+    print("You are tall enough to ride.")
+else:
+    print("You need to grow some more to ride.")
