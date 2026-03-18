@@ -1,0 +1,134 @@
+#exercise1
+# Create my_fav_numbers set
+my_fav_numbers = {3, 7, 21}
+
+# Add two new numbers
+my_fav_numbers.add(10)
+my_fav_numbers.add(42)
+
+# Remove the last number added (42)
+my_fav_numbers.remove(42)
+
+# Create friend_fav_numbers set
+friend_fav_numbers = {5, 7, 12}
+
+# Concatenate sets (union)
+our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
+
+# Print results
+print("My favorite numbers:", my_fav_numbers)
+print("Friend's favorite numbers:", friend_fav_numbers)
+print("Our favorite numbers:", our_fav_numbers)
+numbers = (1, 2, 3)
+
+# Create a new tuple with additional numbers
+numbers = numbers + (4, 5)
+
+print(numbers)
+#exercise3
+basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+
+# Remove "Banana"
+basket.remove("Banana")
+
+# Remove "Blueberries"
+basket.remove("Blueberries")
+
+# Add "Kiwi" to the end
+basket.append("Kiwi")
+
+# Add "Apples" to the beginning
+basket.insert(0, "Apples")
+
+# Count how many times "Apples" appears
+apple_count = basket.count("Apples")
+print("Number of Apples:", apple_count)
+
+# Empty the list
+basket.clear()
+
+# Print final state
+print("Final basket:", basket)
+
+#exercise4
+
+mixed_list = []
+
+for i in range(3, 11):  # 3 to 10
+    mixed_list.append(i / 2)
+
+print(mixed_list)
+
+#exercise5
+for i in range(2, 21, 2):
+    print(i)
+
+ #exercise6
+True
+name = input("Enter your name: ")
+
+    # Check if input is valid
+if not name.isdigit() and len(name) >= 3:
+        print("Thank you")
+"break"
+"else"
+print("Invalid input, please enter a valid name.")
+
+#exercise7
+# Ask user for favorite fruits
+fruits_input = input("Enter your favorite fruits (separated by spaces): ")
+
+# Convert input into a list
+favorite_fruits = fruits_input.split()
+
+# Ask for a fruit to check
+fruit_choice = input("Enter the name of a fruit: ")
+
+# Check if the fruit is in the list
+if fruit_choice in favorite_fruits:
+    print("You chose one of your favorite fruits! Enjoy!")
+else:
+    print("You chose a new fruit. I hope you enjoy it!")
+    
+    #exercirse9
+    toppings = []
+base_price = 10
+topping_price = 2.5
+
+while True:
+    topping = input("Enter a pizza topping (or type 'quit' to finish): ")
+    
+    if topping.lower() == "quit":
+        break
+    
+    toppings.append(topping)
+    print(f"Adding {topping} to your pizza.")
+
+# Calculate total cost
+total_cost = base_price + (len(toppings) * topping_price)
+
+# Print results
+print("\nYour pizza toppings:", toppings)
+print("Total cost: $", total_cost)
+
+#bonus
+attendees = []
+
+# Ask how many people
+num_people = int(input("How many people are in the group? "))
+
+# Collect ages
+for i in range(num_people):
+    age = int(input(f"Enter age of person {i+1}: "))
+    attendees.append(age)
+
+# Filter allowed ages (16–21 inclusive)
+allowed = []
+
+for age in attendees:
+    if 16 <= age <= 21:
+        allowed.append(age)
+
+# Print final list
+print("Allowed attendees:", allowed)
+    
