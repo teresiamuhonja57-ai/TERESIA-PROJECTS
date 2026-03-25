@@ -1,0 +1,134 @@
+#exercise1
+# Step 1: Define a Function
+def display_message():
+    # Step 2: Print a Message
+    print("I am learning about functions in Python.")
+
+# Step 3: Call the Function
+display_message()
+
+#exercise2
+# Step 1: Define a Function with a Parameter
+def favorite_book(title):
+    # Step 2: Print a Message with the Title (using an f-string)
+    print(f"One of my favorite books is {title}.")
+
+# Step 3: Call the Function with an Argument
+favorite_book("Alice in Wonderland")
+
+#exercise3
+# Step 1: Define a Function with a Default Parameter
+def describe_city(city, country="Unknown"):
+    # Step 2: Print a Message
+    # Using an f-string for clean formatting
+    print(f"{city} is in {country}.")
+
+# Step 3: Call the Function
+# Calling with both arguments
+describe_city("Reykjavik", "Iceland")
+
+# Calling with only the city (uses the default country)
+describe_city("Paris")
+
+# You can even call it with a different country!
+describe_city("Tokyo", "Japan")
+
+#exercise4
+# Step 1: Import the random Module
+import random
+
+# Step 2: Define a Function with a Parameter
+def compare_random_numbers(user_number):
+    # Step 3: Generate a Random Number between 1 and 100
+    random_number = random.randint(1, 100)
+    
+    # Step 4: Compare the Numbers using an if/else statement
+    if user_number == random_number:
+        print("Success!")
+    else:
+        print(f"Fail! Your number: {user_number}, Random number: {random_number}")
+
+# Step 5: Call the Function
+compare_random_numbers(50)
+
+#exercise5
+# Step 1 & 4: Define a Function with Default Values
+def make_shirt(size="large", text="I love Python"):
+    # Step 2: Print a Summary Message
+    print(f"The size of the shirt is {size} and the text is {text}.")
+
+# Step 5: Call the Function with Default and Custom Values
+
+# A large shirt with the default message
+make_shirt()
+
+# A medium shirt with the default message
+make_shirt(size="medium")
+
+# A shirt of any size with a different message
+make_shirt("small", "Custom message")
+
+# Step 6 (Bonus): Calling with Keyword Arguments
+make_shirt(text="Hello!", size="small")
+
+#exercise6
+# Step 1: Create a List of Magician Names
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+
+# Step 2: Create a Function to Display Magicians
+def show_magicians(magicians):
+    for magician in magicians:
+        print(magician)
+
+# Step 3: Create a Function to Modify the List
+def make_great(magicians):
+    # We use range(len()) to get the index so we can modify the original list
+    for i in range(len(magicians)):
+        magicians[i] = f"{magicians[i]} the Great"
+
+# Step 4: Call the Functions
+make_great(magician_names)
+show_magicians(magician_names)
+
+#exercise7
+import random
+
+# Step 1 & 4: Create get_random_temp() with floating-point numbers
+def get_random_temp(season="any"):
+    # Step 5 Bonus: Seasonal temperature ranges
+    if season in [12, 1, 2]:    # Winter
+        return random.uniform(-10, 5)
+    elif season in [3, 4, 5]:  # Spring
+        return random.uniform(6, 20)
+    elif season in [6, 7, 8]:  # Summer
+        return random.uniform(21, 40)
+    elif season in [9, 10, 11]: # Fall
+        return random.uniform(5, 15)
+    else:
+        return random.uniform(-10, 40)
+
+# Step 2: Create the main() Function
+def main():
+    # Step 5 Bonus: Ask user for a month
+    month = int(input("Enter the month number (1-12): "))
+    
+    # Call the random temp function based on season
+    temp = get_random_temp(month)
+    
+    # Rounding to 1 decimal place for a clean look
+    print(f"The temperature right now is {round(temp, 1)} degrees Celsius.")
+
+    # Step 3: Provide Temperature-Based Advice
+    if temp < 0:
+        print("Brrr, that’s freezing! Wear some extra layers today.")
+    elif 0 <= temp < 16:
+        print("Quite chilly! Don’t forget your coat.")
+    elif 16 <= temp < 24:
+        print("Nice weather.")
+    elif 24 <= temp < 32:
+        print("A bit warm, stay hydrated.")
+    else:
+        print("It’s really hot! Stay cool.")
+
+# Execute the program
+main()
