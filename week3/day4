@@ -1,0 +1,102 @@
+// #1 
+// Prediction: alert will show 3. 
+// Why: 'a' is initialized as 5, but since 5 > 1, the code inside the 'if' block reassigns 'a' to 3.
+// #1.2: If declared with const, it will throw a TypeError because you cannot reassign a constant.
+
+// #2
+// Prediction 2.1: First alert: 0 | Second alert: 5.
+// Why: funcThree runs first and alerts the global 'a' (0). funcTwo runs and reassigns global 'a' to 5. 
+// The next funcThree call alerts the updated value.
+// #2.2: If declared with const, funcTwo would throw an error on 'a = 5'.
+
+// #3
+// Prediction: alert will show "hello".
+// Why: funcFour attaches 'a' to the window object (global scope), making it accessible to funcFive.
+
+// #4
+// Prediction: alert will show "test".
+// Why: Even though there is a global 'a', funcSix declares a local 'a' inside its own scope. 
+// This is called "shadowing."
+// #4.2: If both were const, it would still work and alert "test" because they are in different scopes.
+
+// #5
+// Prediction: 1st alert: 5 | 2nd alert: 2.
+// Why: The 'let a = 5' inside the 'if' block is block-scoped. It doesn't affect the 'a' outside.
+// #5.2: If declared with const, the result remains the same (5 then 2).
+
+//exercise2
+const winBattle = () => true;
+
+let experiencePoints = winBattle() ? 10 : 1;
+
+console.log(experiencePoints);
+
+//exercise3
+const isString = (val) => typeof val === 'string';
+
+console.log(isString('hello')); // true
+console.log(isString([1, 2, 4, 0])); // false
+
+//exercise4
+const sum = (a, b) => a + b;
+
+//exersice5
+// 1. Function Declaration (Hoisted)
+function convertToGrams(kg) {
+    return kg * 1000;
+}
+console.log(convertToGrams(2));
+
+// 2. Function Expression (Not hoisted)
+const kgToGrams = function(kg) {
+    return kg * 1000;
+};
+console.log(kgToGrams(3));
+
+// Difference: Function declarations are hoisted to the top of the script; function expressions are not.
+
+// 3. Arrow Function
+const arrowKgToGrams = kg => kg * 1000;
+console.log(arrowKgToGrams(4));
+
+//exercise6
+(function(numChildren, partner, loc, job) {
+    const sentence = `You will be a ${job} in ${loc}, and married to ${partner} with ${numChildren} kids.`;
+    const p = document.createElement('p');
+    p.textContent = sentence;
+    document.body.appendChild(p);
+})(3, "Sarah", "Tokyo", "Developer");
+
+//exersice7
+// Assuming <nav id="navbar"></nav> exists in HTML
+(function(username) {
+    const nav = document.getElementById('navbar');
+    const userDiv = document.createElement('div');
+    userDiv.innerHTML = `
+        <span>Welcome, ${username}</span>
+        <img src="https://via.placeholder.com/50" alt="profile" style="border-radius: 50%;">
+    `;
+    nav.appendChild(userDiv);
+})("John");
+
+//exersice8
+function makeJuice(size) {
+    const ingredients = [];
+
+    function addIngredients(ing1, ing2, ing3) {
+        ingredients.push(ing1, ing2, ing3);
+    }
+
+    function displayJuice() {
+        const sentence = `The client wants a ${size} juice, containing: ${ingredients.join(", ")}.`;
+        const p = document.createElement('p');
+        p.textContent = sentence;
+        document.body.appendChild(p);
+    }
+
+    addIngredients("apple", "ginger", "lemon");
+    addIngredients("carrot", "beet", "orange");
+    displayJuice();
+}
+
+makeJuice("large");
